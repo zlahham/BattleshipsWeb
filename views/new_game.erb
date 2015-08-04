@@ -1,10 +1,14 @@
 
+
 <% if @name %>
-<h1>Thanks for registering <%= @name %> </h1>
+	<h1>Thanks for registering <%= @name %> </h1>
+
 <% else %>
-<form action="/registered">
+	<h1>Please enter your name</h1>
+	<form action="/registered">
   What's your name?
   <input id="name_field" name="name"></input>
   <input id="submit_btn" type="submit"></input>
-</form>
+	</form>
+
 <% end %>
