@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'shotgun'
 
 class BattleshipsWeb < Sinatra::Base
   get '/' do
