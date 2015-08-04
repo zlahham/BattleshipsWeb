@@ -1,5 +1,10 @@
-<form>
-What's your name?
-<input type = 'text'> </input>
-<input type = 'submit'> </input>
+
+<% if @name %>
+<h1>Thanks for registering <%= @name %> </h1>
+<% else %>
+<form action="/registered">
+  What's your name?
+  <input id="name_field" name="name"></input>
+  <input id="submit_btn" type="submit"></input>
 </form>
+<% end %>
