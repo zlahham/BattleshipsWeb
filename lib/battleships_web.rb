@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'shotgun'
+require 'battleships'
 
 class BattleshipsWeb < Sinatra::Base
 	set :views, proc { File.join(root, '..', 'views') }
@@ -16,10 +17,23 @@ class BattleshipsWeb < Sinatra::Base
     erb :new_game
   end
 
-  # get '/registered' do
-  #   @name = params[:name]
-  #   erb :new_game
-  # end
+  get '/registered' do
+    erb :registered
+  end
+
+  post '/registered' do
+    erb :registered
+  end
+
+  get '/new_board' do
+    "Hello"
+    erb :new_board
+  end
+
+  post '/new_board' do
+    "Hello"
+    erb :new_board
+  end
 
 
   # start the server if ruby file executed directly

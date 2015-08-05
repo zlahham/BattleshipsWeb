@@ -13,10 +13,15 @@ feature "starting a new game" do
 
   scenario "user does not enter their name" do
   	visit '/'
-  	click_link "New Game"
+  	click_link "New game"
   	expect(page).to have_content "What's your name?"
   	click_on "submit_btn"
-  	expect(page).to have_content "What's your name?"
+  	expect(page).to have_content "Disaster!"
   end
 
+
+  Allow the user to play against the computer by shooting at a randomly generated computer opponent board
+
+  scenario "user can shoot at computer opponent board"
+  	vi
 end
