@@ -11,10 +11,15 @@ class BattleshipsWeb < Sinatra::Base
     erb :new_game
   end
 
-  get '/registered' do
+  post '/new_game' do
     @name = params[:name]
     erb :new_game
   end
+
+  # get '/registered' do
+  #   @name = params[:name]
+  #   erb :new_game
+  # end
 
 
   # start the server if ruby file executed directly
