@@ -18,23 +18,16 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/registered' do
+		$game = Game.new Player, Board
     erb :registered
   end
 
-  post '/registered' do
-    erb :registered
-  end
-
-  get '/new_board' do
-    "Hello"
-    erb :new_board
-  end
-
-  post '/new_board' do
-    "Hello"
-    erb :new_board
-  end
-
+	post '/registered' do
+	  $game = Game.new Player, Board
+		@coord = params[:coord]
+		$game.player_1.shoot(@coord.upcase.to_sym)
+		erb :registered
+	end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

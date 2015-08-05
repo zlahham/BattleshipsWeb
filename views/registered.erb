@@ -1,7 +1,33 @@
-<% game = Game.new Player, Board %>
+<div style="width:100px; display:inline;">
+<h1>Player 2</h1>
 
-<form action="/new_board" method="post">
-<button name="view_board" type="submit">View Board</button>
+<form action="/registered" method="post">
+  <p>Please type in a coordinate here</p>
+  <input name="coord"></input>
+  <input type="submit"></input>
 </form>
 
+<% $game.player_2.place_ship Ship.battleship, :A1, :horizontally %>
+<% $game.player_2.place_ship Ship.aircraft_carrier, :A2, :horizontally  %>
+<% $game.player_2.place_ship Ship.submarine, :A3, :horizontally  %>
+<% $game.player_2.place_ship Ship.destroyer, :A4, :horizontally  %>
+<% $game.player_2.place_ship Ship.cruiser, :A5, :horizontally  %>
+<h3>Opponent Board</h3>
+<pre> <%= $game.opponent_board_view $game.player_1 %></pre>
+<h3>Your Board</h3>
+<pre> <%= $game.own_board_view $game.player_2 %></pre>
+</div>
 
+<!-- <div style="width:100px; display:inline;">
+<h1>Player 1</h1>
+
+<% $game.player_1.place_ship Ship.battleship, :A1, :horizontally %>
+<% $game.player_1.place_ship Ship.aircraft_carrier, :A2, :horizontally  %>
+<% $game.player_1.place_ship Ship.submarine, :A3, :horizontally  %>
+<% $game.player_1.place_ship Ship.destroyer, :A4, :horizontally  %>
+<% $game.player_1.place_ship Ship.cruiser, :A5, :horizontally  %>
+<h3>Opponent Board</h3>
+<pre> <%= $game.opponent_board_view $game.player_2 %></pre>
+<h3>Your Board</h3>
+<pre> <%= $game.own_board_view $game.player_1 %></pre>
+</div> -->

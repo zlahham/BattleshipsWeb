@@ -18,10 +18,8 @@ feature "starting a new game" do
   	click_on "submit_btn"
   	expect(page).to have_content "Disaster!"
   end
+end
 
+feature "Allow the user to play against the computer by shooting at a randomly generated computer opponent board" do
 
-  Allow the user to play against the computer by shooting at a randomly generated computer opponent board
-
-  scenario "user can shoot at computer opponent board"
-  	vi
 end
