@@ -7,8 +7,8 @@
   <input type="submit"></input>
 </form>
 
-<% $game.player_2.place_ship Ship.battleship, :A1, :horizontally %>
-<% $game.player_2.place_ship Ship.aircraft_carrier, :A2, :horizontally  %>
+<% $game.player_2.place_ship Ship.battleship, rand_coord_generator, rand_direction %>
+<% $game.player_2.place_ship Ship.aircraft_carrier, rand_coord_generator, :horizontally  %>
 <% $game.player_2.place_ship Ship.submarine, :A3, :horizontally  %>
 <% $game.player_2.place_ship Ship.destroyer, :A4, :horizontally  %>
 <% $game.player_2.place_ship Ship.cruiser, :A5, :horizontally  %>
