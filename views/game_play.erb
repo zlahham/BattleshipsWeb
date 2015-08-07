@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+I am the gameplay page
+
+<form action="/game_play" method="post">
+  <p>Please type in a coordinate here</p>
+  <input name="coord" placeholder="A1"></input>
+  <input type="submit" value="Fire!"></input>
+</form>
+
+
+<h1>You</h1>
+<h3>Opponent Board</h3>
+<pre id="p1_opp"> <%= $game.opponent_board_view $game.player_1 %></pre>
+<h3>Your Board</h3>
+<pre id="p1_own"> <%= $game.own_board_view $game.player_1 %></pre>
+
+<h1>Your opponent</h1>
+<h3>Opponent Board</h3>
+<pre id="p1_opp"> <%= $game.opponent_board_view $game.player_2 %></pre>
+<h3>Your Board</h3>
+<pre id="p2_own"> <%= $game.own_board_view $game.player_2 %></pre>
+</div>

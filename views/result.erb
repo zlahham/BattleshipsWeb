@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+
+<div>
+<a href="/new_game">Play again</a>
+<% if $game.winner == $game.player_1 %>
+  <h2> You have won! </h2>
+  <img src="champion.jpg">
+<% else %>
+	<h2>You lost :(</h2>
+	 <img src="loser.jpg">
+<% end %>
+</div>
+

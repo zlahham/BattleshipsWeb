@@ -1,33 +1,56 @@
-<div style="width:100px; display:inline;">
-<h1>Player 2</h1>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<h1>Please place your ships....then click <a href="/game_play">Start Game</a></h1>
+
+<div style="width:300px; display:inline-block;">
+<h1>You <%= @something %> </h1>
 
 <form action="/registered" method="post">
-  <p>Please type in a coordinate here</p>
-  <input name="coord"></input>
-  <input type="submit"></input>
+
+<label>Ship Type</label>
+<select name="ship_type">
+  <option value="battleship">Battleship</option>
+  <option value="aircraft_carrier">Aircraft Carrier</option>
+  <option value="submarine">Submarine</option>
+  <option value="destroyer">Destoryer</option>
+  <option value="cruiser">Cruiser</option>
+</select>
+
+<br>
+<label>Coordinate</label>
+<select name="ship_coord">
+  <option value="A1">A1</option>
+  <option value="A2">A2</option>
+  <option value="A3">A3</option>
+  <option value="A4">A4</option>
+  <option value="A5">A5</option>
+</select>
+
+<br>
+<label>Direction</label>
+<select name="ship_direction">
+  <option value="vertically">Vertically</option>
+  <option value="horizontally">Horizontally</option>
+</select>
+
+<br>
+
+  <input type="submit" name="submit" value="Place Ships"></input>
 </form>
 
-<% $game.player_2.place_ship Ship.battleship, rand_coord_generator, rand_direction %>
-<% $game.player_2.place_ship Ship.aircraft_carrier, rand_coord_generator, :horizontally  %>
-<% $game.player_2.place_ship Ship.submarine, :A3, :horizontally  %>
-<% $game.player_2.place_ship Ship.destroyer, :A4, :horizontally  %>
-<% $game.player_2.place_ship Ship.cruiser, :A5, :horizontally  %>
 <h3>Opponent Board</h3>
 <pre> <%= $game.opponent_board_view $game.player_1 %></pre>
 <h3>Your Board</h3>
-<pre> <%= $game.own_board_view $game.player_2 %></pre>
+<pre id='bob'> <%= $game.own_board_view $game.player_1 %></pre>
 </div>
 
-<!-- <div style="width:100px; display:inline;">
-<h1>Player 1</h1>
 
-<% $game.player_1.place_ship Ship.battleship, :A1, :horizontally %>
-<% $game.player_1.place_ship Ship.aircraft_carrier, :A2, :horizontally  %>
-<% $game.player_1.place_ship Ship.submarine, :A3, :horizontally  %>
-<% $game.player_1.place_ship Ship.destroyer, :A4, :horizontally  %>
-<% $game.player_1.place_ship Ship.cruiser, :A5, :horizontally  %>
+<div style="width:300px; display:inline-block;">
+<h1>Your opponent</h1>
+
 <h3>Opponent Board</h3>
 <pre> <%= $game.opponent_board_view $game.player_2 %></pre>
 <h3>Your Board</h3>
-<pre> <%= $game.own_board_view $game.player_1 %></pre>
-</div> -->
+<pre> <%= $game.own_board_view $game.player_2 %></pre>
+</div>

@@ -1,19 +1,36 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<h1>Welcome to Tropical Battleships</h1>
+
+<p>
+Battleships is a game where each player has a board upon which they can place a number of ships. The boards are 10x10 two dimensional grid.
+</p>
+
+<p>
+After each player has placed their ships on their own board they take turns to shoot on the opponents board. In each round, each player takes a turn to announce a target square in the opponent's grid which is to be shot at. The opponent announces whether or not the square is occupied by a ship, and if it is a hit they mark this on their own primary grid. The attacking player notes the hit or miss on their own tracking grid, in order to build up a picture of the opponent's fleet.
+
+</p>
 
 <% if @name.nil? %>
 
-	<h1>Please enter your name</h1>
+	<h1>To play please enter your name</h1>
 	<form action="/new_game" method="post">
-  What's your name?
+  What's your name? (Player 1)
   <input id="name_field" name="name"></input>
+  <br>
+  <br>
+  What's your name? (Player 2)
+  <input id="name_field" name="name_2"></input>
+  <br>
+  <br>
   <input id="submit_btn" type="submit"></input>
 	</form>
 
-<% elsif @name.empty? %>
-	<h1>Disaster! You need to enter a name. </h1>
-	<a href="/new_game">Click here to go back.</a>
 
 <% else %>
-<h1>Hello <%= @name.capitalize %> </h1>
-<a href="/registered">Ready? Let's play!</a>
+<h1>Hello <%= @name.capitalize %> - You are Player 1 </h1>
+<h1>Hello <%= @name_2.capitalize %> - You are Player 2 </h1>
+<a href="/registered">Take me to the Game!</a>
 
 <% end %>
