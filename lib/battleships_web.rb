@@ -54,12 +54,24 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/game_play' do
+
     erb :game_play
   end
 
   post '/game_play' do
     @coord = params[:coord]
-    $game.player_1.shoot(@coord.upcase.to_sym)
+    # $game.player_1.shoot(@coord.upcase.to_sym)
+    begin
+      if  $game.player_1.shoot(@coord.upcase.to_sym) == :hit
+        @hit = true
+      else
+        @hit = false
+      end
+      rescue RuntimeError
+        @coordinate_already_been_shot_at = true
+        p "Master Blaster"
+    end
+
     redirect '/result' if $game.has_winner?
 
     erb :game_play

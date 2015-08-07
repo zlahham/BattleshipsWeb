@@ -3,6 +3,11 @@
 
 I am the gameplay page
 
+<% if @coordinate_already_been_shot_at %>
+	<h4> Print this to page if already shot at </h4>
+<% end %>
+
+
 <form action="/game_play" method="post">
   <p>Please type in a coordinate here</p>
   <input name="coord" placeholder="A1"></input>
